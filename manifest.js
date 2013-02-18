@@ -4,7 +4,7 @@
 
 // 1) BRANDING - the icon and link in the upper left corner
 wApps.manifest.brand={
-    pic:'http://wapps.googlecode.com/git/brandMathBiol.png',
+    pic:'https://wapps.googlecode.com/git/brandMathBiol.png',
     url:'https://github.com/wApps/manifest#wapps-all-you-need-is-a-manifest'
 };
 
