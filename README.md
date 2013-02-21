@@ -28,14 +28,17 @@ As the inspection of this file will reveal, the manifest is a JavaScript file, a
 		{ 
 			"name": "name of your wApp",
     		"description": "description of your wApp to be shown in the wApp listing in the app Store",
-    		"url": "URL linked to the wApp name when displayed in the store",  
-    		"author":"your name, it should match the author name in the author list",
-    		"namespace":"name of the variable, if any, that will be created by your script",
-    	buildUI:function(id){
-        	this.require("URL of your script'",   // loaded only if namespace var not there already
-            function(){
-                myCode.myUI(id);      //  your method to assemble the UI at the element with given id
-            });
+    		"url": "URL of page descring you wApp",  
+    		"author":"your name", //it should match the author name in the author list",
+    		"namespace":"myVar",  // name of the variable, if any, that will be created by your script
+    		buildUI:function(id){
+        		this.require("URL of your script'",   // loaded only if namespace var not there already
+            		function(){
+            		    myVar.myUI(id);      //  your method to assemble UI at the element with given id
+                	}
+            	);
+            	// or any other code you want to run
+            }
         },
 		
 		{ … descritpion of another wApp etc …},
