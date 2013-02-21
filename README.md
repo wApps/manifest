@@ -13,10 +13,59 @@ In a nutshell, all you need is to concatenate your manifest URL with
 * **loadApps**: comma separated list of wApps to be automatically activated and displayed under "myApps". For example, [http://wapps.github.com?loadApps=ET callHome,someWApp](), or the https hosted equivalent, [https://wapps.googlecode.com/git/index.html?loadApps=ET callHome,someWApp](). 
 
 ### Manifest
-This is the only file an wApps ecosystem needs to maintain. It includes four sections: 1) Branding, 2) Tabs, 3) Apps, and 4) Authors. The configuration is straight forward and it is best undertood by inspecting an existing manifest, such as the [root manifest](https://github.com/wApps/manifest/blob/master/manifest.js) maintained in this github repository. As the inspection of this file will reveal, the manifest is a JavaScript file, and each app will use a .builUI(id) method that assembles the wApp's UI within a DOM element with that id. The processing of the manifest object by the wApps application, [wApps.js](https://code.google.com/p/wapps/source/browse/wApps.js), adds a this.require method, which will load code from a URL before moving on to the UI assembly. The remote code loading is only triggered if the object specified by this.namespace is not already there. If it is, wApps proceeds directly to UI assembly. The only namespaces taken by the wApps ecosystem, besides "wApps", are those created by jQuery and twitter bootstrap (what is it?). 
+This is the only file an wApps ecosystem needs to maintain. It includes four sections: 1) Branding, 2) Tabs, 3) Apps, and 4) Authors. The configuration is straight forward and it is best undertood by inspecting an existing manifest, such as the [root manifest](https://github.com/wApps/manifest/blob/master/manifest.js) maintained in this github repository. 
+
+As the inspection of this file will reveal, the manifest is a JavaScript file, and each app will use a .builUI(id) method that assembles the wApp's UI within a DOM element with that id:
+
+<code>
+	
+	wApps.manifest.apps.push(
+		{ … descritpion of a wApp …},
+		{ … descritpion of another wApp …},
+		
+		// now your wApp
+		
+		{ 
+			"name": "name of your wApp",
+    		"description": "description of your wApp to be shown in the wApp listing in the app Store",
+    		"url": "URL linked to the wApp name when displayed in the store",  
+    		"author":"your name, it should match the author name in the author list",
+    		"namespace":'name of the variable, if any, that will be created by your script',
+    	buildUI:function(id){
+        	this.require('url of your script',   // loaded onl if namespace var not there already
+            function(){
+                myCode.myUI(id);      //  your method to assemble the UI at the element with given id
+            });
+        },
+		
+		{ … descritpion of another wApp etc …},
+	)
+</code>
+
+The processing of the manifest object by the wApps application, [wApps.js](https://code.google.com/p/wapps/source/browse/wApps.js), adds a this.require method, which will load code from a URL before moving on to the UI assembly. The remote code loading is only triggered if the object specified by this.namespace is not already there. If it is, wApps proceeds directly to UI assembly. The only namespaces taken by the wApps ecosystem, besides "wApps", are those created by jQuery and twitter bootstrap (what is it?). 
 
 If you have a wApp that is of general interest and want to added it to the root manifest, you are welcome to add it to add it here as a pull request.
 
 ### Security and trust
 Because they are executed in a shared DOM space, wApps are an experiment in social coding. Each manifest defines a community of developers that trusts each other. Hacking information from one wApp by another can be avoided by using iframes, as illustrated in the root manifest. However, to some extent, that also defeats the purpose of the wApps ecosystem, where analytical workflows can be assembled with great flexibility by combining contributions from multiple wApps. An interesting balance between these two situations that does not fully expose an wApp is to use iframes with event listeners. Either way, striking the righ balance between flexibility and security is entirely left to the developer, who gets define the *.buildUI* function.
+
+### Integration
+The wApp ecosystem can itself be assembled anywhere in the web page. Like a wApp, the wApps ecosystem is assembled by a .buildUI function, so <code> wApps.buildUI(yourDesiredElementID)</code> will place it where you need it.
+
+<code>
+
+    <div id="lala"></div>
+	<script src="http://wapps.googlecode.com/git/wApps.js"></script>
+	<script>
+		wApps.build("lala");
+	</script>
+	
+</code>
+
+<div id="lala"></div>
+<script src="http://wapps.googlecode.com/git/wApps.js"></script>
+<script>
+wApps.build("lala");
+</script>
+
 
