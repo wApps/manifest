@@ -53,19 +53,19 @@ Because they are executed in a shared DOM space, wApps are an experiment in soci
 The wApp ecosystem can itself be assembled anywhere in the web page. Like a wApp, the wApps ecosystem is assembled by a .buildUI function, so <code> wApps.buildUI(yourDesiredElementID)</code> will place it where you need it.
 
 <code>
-
-    <div id="lala"></div>
+	
 	<script src="http://wapps.googlecode.com/git/wApps.js"></script>
+	<div id="lala"></div>
 	<script>
 		wApps.build("lala");
 	</script>
-	
-</code>
 
-<div id="lala"></div>
-<script src="http://wapps.googlecode.com/git/wApps.js"></script>
-<script>
-wApps.build("lala");
-</script>
+And you can, like any individual wApp, always invoke it within the safety of an iframe:
+
+<code> 
+
+	<iframe width=100% height=800 seamless src="https://wapps.googlecode.com/git/index.html"></iframe> 
+as right here:
+<iframe width=100% height=800 seamless src="https://wapps.googlecode.com/git/index.html"></iframe>
 
 
