@@ -68,7 +68,7 @@ And you can, like any individual wApp, always invoke it within the safety of an 
 <code> 
 
 	<iframe width=100% height=800 seamless src="https://wapps.googlecode.com/git/index.html"></iframe> 
-as right here:
+as right here (you'll see the embeded wApps ecosystem if you are reading this .md file from a Markdown editor like [Mou](http://mouapp.com/)):
 <iframe width=100% height=800 seamless src="https://wapps.googlecode.com/git/index.html"></iframe>
 
 
