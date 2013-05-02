@@ -60,6 +60,20 @@ wApps.manifest.apps.push(
     },
 
     {
+    "name": "Login to Google Fusion Tables",
+    "description": "iframe listening to calls for login to Google Fusion Tables",
+    "url": "https://code.google.com/p/wapps/source/browse/login.html",
+    "author":"Jonas Almeida",
+    "namespace":'login',
+    buildUI:function(id){
+        this.require('',
+            function(){
+                $('#'+id).html("<iframe width=100% height=500 src='localhost:8888/wapps/login.html'/>");
+            });
+        }
+    },
+
+    {
     "name": "TCGA toolbox",
     "description": "VAlex's TCGA Toolbox in a iframe",
     "url": "https://code.google.com/p/jmat/", // home page of App
