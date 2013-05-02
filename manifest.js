@@ -60,7 +60,7 @@ wApps.manifest.apps.push(
     },
 
     {
-    "name": "Login to Google Fusion Tables",
+    "name": "FusionTables",
     "description": "iframe listening to calls for login to Google Fusion Tables",
     "url": "https://code.google.com/p/wapps/source/browse/login.html",
     "author":"Jonas Almeida",
