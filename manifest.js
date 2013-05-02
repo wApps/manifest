@@ -68,7 +68,7 @@ wApps.manifest.apps.push(
     buildUI:function(id){
         this.require('',
             function(){
-                $('#'+id).html("<iframe width=100% height=500 src='localhost:8888/wapps/login.html'/>");
+                $('#'+id).html("<iframe width=100% height=500 src='https://wapps.googlecode.com/git/login.html'/>");
             });
         }
     },
