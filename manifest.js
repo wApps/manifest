@@ -62,13 +62,13 @@ wApps.manifest.apps.push(
     {
     "name": "FusionTables",
     "description": "iframe listening to calls for login to Google Fusion Tables",
-    "url": "https://code.google.com/p/wapps/source/browse/login.html",
+    "url": "https://code.google.com/p/wapps/source/browse/loginGoogle.html",
     "author":"Jonas Almeida",
-    "namespace":'login',
+    "namespace":'loginGoogle',
     buildUI:function(id){
         this.require('',
             function(){
-                $('#'+id).html("<iframe width=100% id='wappFusionTables' height=500 src='https://wapps.googlecode.com/git/login.html'/>");
+                $('#'+id).html("<iframe width=100% id='wappFusionTables' height=500 src='https://wapps.googlecode.com/git/loginGoogle.html'/>");
             });
         }
     },
