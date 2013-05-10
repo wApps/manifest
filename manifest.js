@@ -68,7 +68,7 @@ wApps.manifest.apps.push(
     buildUI:function(id){
         this.require('',
             function(){
-                $('#'+id).html("<iframe width=100% id='wappFusionTables' width=100% src='https://wapps.googlecode.com/git/loginGoogle.html'/>");
+                $('#'+id).html("<iframe width=100% id='wappFusionTables' heigth=100% src='https://wapps.googlecode.com/git/loginGoogle.html'/>");
             });
         }
     },
