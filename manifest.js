@@ -36,10 +36,10 @@ wApps.manifest.apps.push(
     {
     "name" : 'VCF',
     "description" : 'web app to handle <a href="http://vcftools.sourceforge.net/specs.html" target="_blank">Variant Calling Format</a> genomic data.',
-    "url" : 'https://github.com/ibl/vcf',
+    "url" : 'https://ibl.github.io/vcf/',
     "author" : 'Jonas Almeida',
     buildUI : function(id){ 
-        this.require('https://raw.github.com/ibl/vcf/gh-pages/vcf.js', 
+        this.require('https://ibl.github.io/vcf/vcf.js', 
             function () {
                 VCF.buildUI(id);
             }
@@ -50,7 +50,7 @@ wApps.manifest.apps.push(
     {
     "name": "QMachine",
     "description": "QMachine volunteer",
-    "url": "http://v1.qmachine.org",
+    "url": "https://www.qmachine.org",
     "author":"Sean Wilkinson",
     "namespace":'QM',
     buildUI:function(id){
@@ -91,13 +91,13 @@ wApps.manifest.apps.push(
     {
     "name": "TCGA toolbox",
     "description": "VAlex's TCGA Toolbox in a iframe",
-    "url": "https://code.google.com/p/jmat/", // home page of App
+    "url": "https://github.com/tcga/Toolbox", // home page of App
     "author":"Alexander Gruneberg",
     "namespace":'TCGA',
     buildUI:function(id){
         this.require('', // script needed to volunteer compute cycles to QM
             function(){
-                $('#'+id).html('<p>Unlike QMachine, it may make sense to keep this one in a iframe</p><iframe width=100% height=800 src="http://tcga.github.com" seamless="seamless" />');
+                $('#'+id).html('<p>Unlike QMachine, it may make sense to keep this one in a iframe</p><iframe width=100% height=800 src="https://tcga.github.io" seamless="seamless" />');
             });
         }
     },
