@@ -68,7 +68,7 @@ wApps.manifest.apps.push(
     "author":"Jonas Almeida",
     "namespace":'jmat',
     buildUI:function(id){
-        this.require('https://jmat.googlecode.com/git/jmat.js', //'http://localhost:8888/jmat/jmat.js',
+        this.require('https://jonasalmeida.github.io/jmat/jmat.js', //'http://localhost:8888/jmat/jmat.js',
             function(){jmat.s3db.UI.wApp(id,'https://uab.s3db.org/s3db')}
             );
         }
@@ -137,7 +137,7 @@ wApps.manifest.apps.push(
     "author":"Jonas Almeida",
     "namespace":'jmat',
     buildUI:function(id){
-        this.require('https://jmat.googlecode.com/git/jmat.js', //'http://localhost:8888/jmat/jmat.js',
+        this.require('https://jonasalmeida.github.io/jmat/jmat.js', //'http://localhost:8888/jmat/jmat.js',
             function(){
                 $('<div id="plotHere">').appendTo($('#'+id).html(''));
                 jmat.plot("plotHere",jmat.rand(100),jmat.rand(100));
